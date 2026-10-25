@@ -35,6 +35,14 @@ public:
         }
     }
 
+    int getNota1() {
+        return nota1;
+    }
+
+    int getNota2() {
+        return nota2;
+    }
+
     float calculeazaMedie() {
         return (nota1 + nota2) / 2.0f;
     }
@@ -56,15 +64,27 @@ public:
 int main() {
     Student student1(7, 10);
 
-    cout << "--- Situatia initiala ---" << endl;
+    cout << "--- Citirea notelor prin getteri ---" << endl;
+    cout << "Prima nota: " << student1.getNota1() << endl;
+    cout << "A doua nota: " << student1.getNota2() << endl;
+
+    cout << "\n--- Situatia initiala ---" << endl;
     student1.afiseazaSituatie();
 
     cout << "\n--- Modificam prima nota in 9 ---" << endl;
     student1.setNota1(9);
+    cout << "Getterul returneaza acum: "
+         << student1.getNota1() << endl;
     student1.afiseazaSituatie();
 
     cout << "\n--- Incercam o nota invalida: 12 ---" << endl;
     student1.setNota2(12);
+    student1.afiseazaSituatie();
+
+    cout << "\n--- Modificam a doua nota in 4 ---" << endl;
+    student1.setNota2(4);
+    cout << "Getterul returneaza acum: "
+         << student1.getNota2() << endl;
     student1.afiseazaSituatie();
 
     return 0;
